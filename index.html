@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒數計時</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 標題框 -->
+    <div class="title-box">
+      <h1>-- 倒數 <span id="days-remaining">141</span> 天 --</h1>
+    </div>
+
+    <!-- 倒數區塊 -->
+    <div class="countdown">
+      <!-- 每個圓形倒數進度條 -->
+      <div class="circle" id="days">
+        <div class="progress" id="days-progress"></div>
+        <div class="inner-text">
+          <span id="days-number">140</span>
+          <span class="label">天</span>
+        </div>
+      </div>
+      <div class="circle" id="hours">
+        <div class="progress" id="hours-progress"></div>
+        <div class="inner-text">
+          <span id="hours-number">11</span>
+          <span class="label">時</span>
+        </div>
+      </div>
+      <div class="circle" id="minutes">
+        <div class="progress" id="minutes-progress"></div>
+        <div class="inner-text">
+          <span id="minutes-number">59</span>
+          <span class="label">分</span>
+        </div>
+      </div>
+      <div class="circle" id="seconds">
+        <div class="progress" id="seconds-progress"></div>
+        <div class="inner-text">
+          <span id="seconds-number">15</span>
+          <span class="label">秒</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部文字 -->
+    <p class="footer">目前預測114會考日期為2025/05/17</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
