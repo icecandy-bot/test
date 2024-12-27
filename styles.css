@@ -26,12 +26,15 @@ h1 {
   margin: 0;
 }
 
+/* 倒數區塊樣式 */
 .countdown {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* 自動換行 */
   gap: 20px; /* 每個圓形之間的間距 */
   margin-bottom: 20px;
+  transform: scale(2); /* 整體放大200% */
+  transform-origin: center; /* 從中心放大 */
 }
 
 /* 圓形倒數樣式 */
@@ -91,7 +94,7 @@ h1 {
 /* 響應式設計：小螢幕適配 */
 @media (max-width: 768px) {
   .circle {
-    width: 80px; /* 較小螢幕上縮小大小 */
+    width: 80px; /* 小螢幕縮小大小 */
     height: 80px;
   }
 
@@ -105,6 +108,7 @@ h1 {
 
   .countdown {
     gap: 10px; /* 減少圓形之間的間距 */
+    transform: scale(1); /* 小螢幕下取消放大 */
   }
 }
 
