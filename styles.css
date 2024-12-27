@@ -29,15 +29,17 @@ h1 {
 .countdown {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap; /* 自動換行 */
+  gap: 20px; /* 每個圓形之間的間距 */
   margin-bottom: 20px;
 }
 
 /* 圓形倒數樣式 */
 .circle {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 100px; /* 預設大小 */
+  height: 100px; /* 預設大小 */
+  flex-shrink: 0; /* 防止縮小 */
 }
 
 .progress {
@@ -56,8 +58,8 @@ h1 {
 
 .inner-text {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 80%;
+  height: 80%;
   background-color: white;
   border-radius: 50%;
   top: 50%;
@@ -84,4 +86,40 @@ h1 {
 .footer {
   font-size: 12px;
   color: #999;
+}
+
+/* 響應式設計：小螢幕適配 */
+@media (max-width: 768px) {
+  .circle {
+    width: 80px; /* 較小螢幕上縮小大小 */
+    height: 80px;
+  }
+
+  .inner-text span {
+    font-size: 18px; /* 縮小文字 */
+  }
+
+  .inner-text .label {
+    font-size: 12px;
+  }
+
+  .countdown {
+    gap: 10px; /* 減少圓形之間的間距 */
+  }
+}
+
+/* 響應式設計：更大螢幕適配 */
+@media (min-width: 1200px) {
+  .circle {
+    width: 120px; /* 放大大小 */
+    height: 120px;
+  }
+
+  .inner-text span {
+    font-size: 28px; /* 放大文字 */
+  }
+
+  .inner-text .label {
+    font-size: 16px;
+  }
 }
