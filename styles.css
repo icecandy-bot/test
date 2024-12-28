@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  max-width: 1200px; /* 限制最大寬度 */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -19,7 +19,7 @@ body {
   background-color: #6c757d;
   color: white;
   padding: 15px;
-  margin-bottom: 40px; /* 增加標題與進度條的間距 */
+  margin-bottom: 40px;
   border-radius: 10px;
 }
 
@@ -32,18 +32,21 @@ h1 {
 .countdown {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* 自動換行 */
-  gap: 50px; /* 增加圓形之間的間距 */
+  align-items: center;
+  flex-wrap: wrap; /* 讓元素在小螢幕上自動換行 */
+  gap: 30px; /* 控制圓形之間的距離 */
   margin-bottom: 20px;
-  margin-top: 20px; /* 增加與標題框的間距 */
 }
 
 /* 圓形倒數樣式 */
 .circle {
   position: relative;
-  width: 200px; /* 放大大小 */
-  height: 200px; /* 放大大小 */
-  flex-shrink: 0; /* 防止縮小 */
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0; /* 防止圓形縮小 */
+  display: flex; /* 新增：讓圓形內的元素自動對齊 */
+  justify-content: center;
+  align-items: center;
 }
 
 .progress {
@@ -52,10 +55,8 @@ h1 {
   height: 100%;
   border-radius: 50%;
   background: conic-gradient(
-    #ff6f61 0%,     /* 預設紅色 */
-    #ffd966 25%,    /* 黃色進度 */
-    #00bcd4 50%,    /* 藍色進度 */
-    #d3d3d3 100%    /* 灰色未完成部分 */
+    var(--progress-color, #d3d3d3) calc(var(--progress-value, 0) * 1%),
+    #d3d3d3 0
   );
   z-index: 1;
 }
@@ -77,13 +78,19 @@ h1 {
 }
 
 .inner-text .label {
-  font-size: 20px; /* 調整字體大小 */
+  font-size: 20px;
   color: #777;
 }
 
 .inner-text span {
-  font-size: 36px; /* 放大數字字體 */
+  font-size: 36px;
   font-weight: bold;
+}
+
+/* 文字居中對齊修正 */
+.circle .inner-text {
+  text-align: center; /* 確保文字完全居中 */
+  line-height: 1.2; /* 調整行高 */
 }
 
 /* 底部文字樣式 */
@@ -96,12 +103,12 @@ h1 {
 /* 響應式設計：小螢幕適配 */
 @media (max-width: 768px) {
   .circle {
-    width: 150px; /* 縮小圓形 */
+    width: 150px;
     height: 150px;
   }
 
   .inner-text span {
-    font-size: 24px; /* 縮小文字 */
+    font-size: 24px;
   }
 
   .inner-text .label {
