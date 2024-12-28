@@ -9,8 +9,6 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
 }
 
@@ -18,35 +16,30 @@ body {
 .title-box {
   background-color: #6c757d;
   color: white;
-  padding: 15px;
-  margin-bottom: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
   border-radius: 10px;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 24px;
   margin: 0;
 }
 
-/* 倒數區塊樣式 */
 .countdown {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* 讓元素在小螢幕上自動換行 */
-  gap: 30px; /* 控制圓形之間的距離 */
+  flex-wrap: wrap; /* 自動換行 */
+  gap: 20px; /* 每個圓形之間的間距 */
   margin-bottom: 20px;
 }
 
 /* 圓形倒數樣式 */
 .circle {
   position: relative;
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0; /* 防止圓形縮小 */
-  display: flex; /* 新增：讓圓形內的元素自動對齊 */
-  justify-content: center;
-  align-items: center;
+  width: 100px; /* 預設大小 */
+  height: 100px; /* 預設大小 */
+  flex-shrink: 0; /* 防止縮小 */
 }
 
 .progress {
@@ -55,8 +48,10 @@ h1 {
   height: 100%;
   border-radius: 50%;
   background: conic-gradient(
-    var(--progress-color, #d3d3d3) calc(var(--progress-value, 0) * 1%),
-    #d3d3d3 0
+    #ff6f61 0%,     /* 預設紅色 */
+    #ffd966 25%,    /* 黃色進度 */
+    #00bcd4 50%,    /* 藍色進度 */
+    #d3d3d3 100%    /* 灰色未完成部分 */
   );
   z-index: 1;
 }
@@ -78,40 +73,53 @@ h1 {
 }
 
 .inner-text .label {
-  font-size: 20px;
+  font-size: 14px;
   color: #777;
 }
 
 .inner-text span {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
-}
-
-/* 文字居中對齊修正 */
-.circle .inner-text {
-  text-align: center; /* 確保文字完全居中 */
-  line-height: 1.2; /* 調整行高 */
 }
 
 /* 底部文字樣式 */
 .footer {
-  font-size: 16px;
+  font-size: 12px;
   color: #999;
-  margin-top: 20px;
 }
 
 /* 響應式設計：小螢幕適配 */
 @media (max-width: 768px) {
   .circle {
-    width: 150px;
-    height: 150px;
+    width: 80px; /* 較小螢幕上縮小大小 */
+    height: 80px;
   }
 
   .inner-text span {
-    font-size: 24px;
+    font-size: 18px; /* 縮小文字 */
   }
 
   .inner-text .label {
-    font-size: 14px;
+    font-size: 12px;
+  }
+
+  .countdown {
+    gap: 10px; /* 減少圓形之間的間距 */
+  }
+}
+
+/* 響應式設計：更大螢幕適配 */
+@media (min-width: 1200px) {
+  .circle {
+    width: 120px; /* 放大大小 */
+    height: 120px;
+  }
+
+  .inner-text span {
+    font-size: 28px; /* 放大文字 */
+  }
+
+  .inner-text .label {
+    font-size: 16px;
   }
 }
