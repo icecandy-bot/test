@@ -18,13 +18,13 @@ body {
 .title-box {
   background-color: #6c757d;
   color: white;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 40px; /* 增加標題與進度條的間距 */
   border-radius: 10px;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 32px;
   margin: 0;
 }
 
@@ -33,18 +33,16 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* 自動換行 */
-  gap: 40px; /* 增加圓形之間的間距 */
+  gap: 50px; /* 增加圓形之間的間距 */
   margin-bottom: 20px;
-  transform: scale(2); /* 整體放大200% */
-  transform-origin: center; /* 從中心放大 */
   margin-top: 20px; /* 增加與標題框的間距 */
 }
 
 /* 圓形倒數樣式 */
 .circle {
   position: relative;
-  width: 100px; /* 預設大小 */
-  height: 100px; /* 預設大小 */
+  width: 200px; /* 放大大小 */
+  height: 200px; /* 放大大小 */
   flex-shrink: 0; /* 防止縮小 */
 }
 
@@ -79,54 +77,34 @@ h1 {
 }
 
 .inner-text .label {
-  font-size: 14px;
+  font-size: 20px; /* 調整字體大小 */
   color: #777;
 }
 
 .inner-text span {
-  font-size: 24px;
+  font-size: 36px; /* 放大數字字體 */
   font-weight: bold;
 }
 
 /* 底部文字樣式 */
 .footer {
-  font-size: 12px;
+  font-size: 16px;
   color: #999;
+  margin-top: 20px;
 }
 
 /* 響應式設計：小螢幕適配 */
 @media (max-width: 768px) {
-  .countdown {
-    transform: scale(1.5); /* 在小螢幕上縮小比例 */
-    gap: 20px; /* 減少圓形之間的間距 */
-  }
-
   .circle {
-    width: 80px; /* 縮小圓形 */
-    height: 80px;
+    width: 150px; /* 縮小圓形 */
+    height: 150px;
   }
 
   .inner-text span {
-    font-size: 18px; /* 縮小文字 */
+    font-size: 24px; /* 縮小文字 */
   }
 
   .inner-text .label {
-    font-size: 12px;
-  }
-}
-
-/* 響應式設計：更大螢幕適配 */
-@media (min-width: 1200px) {
-  .circle {
-    width: 120px; /* 放大大小 */
-    height: 120px;
-  }
-
-  .inner-text span {
-    font-size: 28px; /* 放大文字 */
-  }
-
-  .inner-text .label {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
